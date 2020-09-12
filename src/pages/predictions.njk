@@ -40,6 +40,9 @@ title: Ongoing Predictions
                   {{ prediction.details }}
                 </small></p>
               {% endif %}
+              {% if prediction.link %}
+                <a href="{{ prediction.link }}" class="card-link" target="_blank">Link</a>
+              {% endif %}
             </div>
 
             {% if prediction.imgUrl %}

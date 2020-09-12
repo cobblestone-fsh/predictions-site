@@ -10,5 +10,8 @@
   ["gov", "U.S. Government"],
   ["gov.scotus", "Supreme Court", "Predictions about the U.S. Supreme Court"],
 
+  ["world", "World"],
+  ["world.europe", "Evropa", "Predictions about the future of Europe."],
+
   ["immigration", "Immigration", "Predictions relating to immigration trends."]
 ]
