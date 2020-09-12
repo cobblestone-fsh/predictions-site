@@ -13,5 +13,23 @@
   ["world", "World"],
   ["world.europe", "Evropa", "Predictions about the future of Europe."],
 
-  ["immigration", "Immigration", "Predictions relating to immigration trends."]
+  ["econ", "Cash Money", "Predictions about money and the economy."],
+
+  ["covid", "COVID-19", "Predictions about Corona-chan."],
+
+  ["collapse", "Collapse"],
+
+  ["anarchy", "Anarcho-Tyranny"],
+
+  ["police", "Police State"],
+
+  ["immigration", "Immigration", "Predictions relating to immigration trends."],
+
+  ["science", "\"Science\""],
+
+  ["tech.social", "Social Media"],
+
+  ["ent.sports", "Sportsball"],
+
+  ["epstein", "Epstein/Maxwell"]
 ]

@@ -11,4 +11,4 @@ I’m documenting it here too.
 * [Ongoing Predictions](./pages/predictions/)
 * [Current Standings](./pages/standings/)
 * [The Rules](./pages/rules/)
-* [Resolutions](./pages/resolutions/)
+* [Resolutions](./pages/log/)

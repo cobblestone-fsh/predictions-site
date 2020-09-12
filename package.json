@@ -17,6 +17,9 @@
   },
   "dependencies": {
     "fs-extra": "^9.0.1",
+    "markdown-it": "^11.0.0",
+    "markdown-it-attrs": "^3.0.3",
+    "moment": "^2.27.0",
     "mongoose": "^5.10.4",
     "underscore": "^1.11.0"
   }

@@ -20,36 +20,7 @@ title: Ongoing Predictions
   <div class="row">
     {% for prediction in ongoing_predictions %}
       {% if prediction.qualifiedCategory == categorySlug %}
-        <div class="col-md-6">
-          <div class="card bg-light w-90 mx-auto mb-3">
-
-            <div class="card-body">
-
-              <h5 class="card-title">{{ prediction.name }}</h5>
-
-              <p><span class="badge badge-secondary">
-                {{ predictor_map[prediction.predictor].name }}
-              </span></p>
-
-              <p class="card-text">
-                {{ prediction.summary }}
-              </p>
-
-              {% if prediction.details %}
-                <p class="card-text"><small class="text-muted">
-                  {{ prediction.details }}
-                </small></p>
-              {% endif %}
-              {% if prediction.link %}
-                <a href="{{ prediction.link }}" class="card-link" target="_blank">Link</a>
-              {% endif %}
-            </div>
-
-            {% if prediction.imgUrl %}
-              <img class="card-img-bottom" src="{{ prediction.imgUrl }}">
-            {% endif %}
-          </div>
-        </div>
+        {% include "prediction_card.njk" %}
       {% endif %}
     {% endfor %}
   </div>

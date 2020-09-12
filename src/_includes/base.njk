@@ -10,7 +10,9 @@
   {% block favicon %}
     <link rel="icon" href="{{ '/favicon.ico' | url }}">
   {% endblock %}
-  <title>{{ title }} | {{ site.title }}</title>
+  {% block title %}
+    <title>{{ title }} | {{ site.title }}</title>
+  {% endblock %}
 </head>
 <body>
 
@@ -18,7 +20,7 @@
   
     <a class="navbar-brand" href="{{ '/' | url }}">{{ site.title }}</a>
 
-    <div class="navbar navbar-collapse">
+    <div class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto">
         {% for link in site.mainMenu %}
           <li class="nav-item">
@@ -33,7 +35,9 @@
 
   <div class="jumbotron">
     <h1 class="display-2 text-center">
-      {{ title }}
+      {% block bigtitle %}
+        {{ title }}
+      {% endblock %}
     </h1>
   </div>
 
@@ -43,6 +47,38 @@
     {% block body %}
       {{ content | safe }}
     {% endblock %}
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+
+          <h4>Social Links</h4>
+
+          <ul>
+            {% if social.twitter %}
+              <li><a href="https://twitter.com/{{ social.twitter }}" target="_blank">Twitter</a></li>
+            {% endif %}
+            {% if social.telegram %}
+              <li><a href="https://t.me/{{ social.telegram }}" target="_blank">Telegram</a></li>
+            {% endif %}
+            {% if social.github %}
+              <li><a href="https://github.com/{{ social.github }}" target="_blank">GitHub</a></li>
+            {% endif %}
+          </ul>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+          <p class="display">
+            This is a static web page generated from a database at the Cobbleserver.
+            Generation is done using <a href="https://www.11ty.dev/" target="_blank">@11ty/eleventy</a>.
+            The most recent build happened at {{ time.now.format("dddd, MMMM Do YYYY, HH:mm:ss") }} UTC.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 
   {% block js %}

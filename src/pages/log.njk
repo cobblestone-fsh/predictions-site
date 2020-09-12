@@ -1,0 +1,15 @@
+---
+layout: base.njk
+title: Resolution Log
+---
+
+<p class="text-muted"><i>
+  Please not that the backlog is purged from time to time and the historical
+  record is not complete.
+</i></p>
+
+<div class="row">
+  {% for prediction in resolved_predictions %}
+    {% include "prediction_card.njk" %}
+  {% endfor %}
+</div>

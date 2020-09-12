@@ -1,0 +1,35 @@
+---
+layout: predictor.njk
+pagination:
+  data: predictors
+  size: 1
+  alias: p
+permalink: "predictors/{{ p._id }}/"
+---
+
+<h3>Resolved Predictions</h3>
+
+<p class="text-muted"><i>
+  Please not that the backlog is purged from time to time and the historical
+  record is not complete.
+</i></p>
+
+<div class="row">
+  {% for prediction in resolved_predictions %}
+    {% if prediction.predictor == p._id %}
+      {% include "prediction_card.njk" %}
+    {% endif %}
+  {% endfor %}
+</div>
+
+
+<h3>Ongoing Predictions</h3>
+
+<div class="row">
+  {% for prediction in ongoing_predictions %}
+    {% if prediction.predictor == p._id %}
+      {% include "prediction_card.njk" %}
+    {% endif %}
+  {% endfor %}
+</div>
+
