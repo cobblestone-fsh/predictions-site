@@ -3,29 +3,51 @@ layout: base.njk
 title: Ongoing Predictions
 ---
 
+<div class="list-group">
+  {% for categorySlug, categoryName, description in categories %}
+    <a href="#section-{{ loop.index }}" class="list-group-item list-group-item-action">{{ categorySlug | dotspacing | safe }}{{ categoryName }}</a>
+  {% endfor %}
+</div>
+
 {% for categorySlug, categoryName, description in categories %}
 
-  <h{{ categorySlug | dotdepth }} id="section={{ loop.index }}" class="display-{{ categorySlug | dotdepth }}">
+  <h{{ categorySlug | dotdepth }} id="section-{{ loop.index }}" class="display-{{ categorySlug | dotdepth }}">
     {{ categoryName }}
   </h{{ categorySlug | dotdepth }}>
 
   <p><i>{{ description | safe }}</i></p>
 
-  {% for prediction in ongoing_predictions %}
-    {% if prediction.qualifiedCategory == categorySlug %}
-      <div class="card bg-light w-75 mx-auto mb-3">
+  <div class="row">
+    {% for prediction in ongoing_predictions %}
+      {% if prediction.qualifiedCategory == categorySlug %}
+        <div class="col-md-6">
+          <div class="card bg-light w-90 mx-auto mb-3">
 
-        <div class="card-body">
-          <h5 class="card-title">{{ prediction.name }}</h5>
-          <p class="card-text">
-            {{ prediction.summary }}
-          </p>
+            <div class="card-body">
+
+              <h5 class="card-title">{{ prediction.name }}</h5>
+
+              <p><span class="badge badge-secondary">
+                {{ predictor_map[prediction.predictor].name }}
+              </span></p>
+
+              <p class="card-text">
+                {{ prediction.summary }}
+              </p>
+
+              {% if prediction.details %}
+                <p class="card-text"><small class="text-muted">
+                  {{ prediction.details }}
+                </small></p>
+              {% endif %}
+            </div>
+
+            {% if prediction.imgUrl %}
+              <img class="card-img-bottom" src="{{ prediction.imgUrl }}">
+            {% endif %}
+          </div>
         </div>
-
-        {% if prediction.imgUrl %}
-          <img class="card-img-bottom" src="{{ prediction.imgUrl }}">
-        {% endif %}
-      </div>
-    {% endif %}
-  {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </div>
 {% endfor %}

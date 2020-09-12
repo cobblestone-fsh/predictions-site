@@ -1,7 +1,7 @@
 {
   "title": "Cobblestone Age Prude",
   "mainMenu": [
-    { "link": "/pages/predictions/", "text": "Ongoing Predictions" },
-    { "link": "/pages/standings/", "text": "Current Standings" }
+    { "link": "/pages/predictions/", "title": "Ongoing Predictions" },
+    { "link": "/pages/standings/", "title": "Current Standings" }
   ]
 }

@@ -1,4 +1,14 @@
 [
-  ["2020", "2020 Election"],
-  ["2020.campaign", "Campaign Season", "Predictions about the 2020 campaign season."]
+  ["2020", "2020 Elections"],
+  ["2020.campaign", "Campaign Season", "Predictions about the 2020 campaign season."],
+  ["2020.result.winner.biden", "For Biden", "Predictions that Trump will lose or that Biden will win."],
+  ["2020.result.winner.trump", "For Trump", "Predictions that Trump will win or that Biden will lose."],
+  ["2020.result.other_race", "Other Races", "Predictions about the 2020 elections other than president."],
+  ["2020.result.demographics", "Result Demographics", "Predictions about result demographics."],
+  ["2020.after", "After 2020", "Predictions for the aftermath of the 2020 election."],
+  
+  ["gov", "U.S. Government"],
+  ["gov.scotus", "Supreme Court", "Predictions about the U.S. Supreme Court"],
+
+  ["immigration", "Immigration", "Predictions relating to immigration trends."]
 ]
