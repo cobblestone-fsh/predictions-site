@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+  {% block meta %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% endblock %}
+  {% block css %}
+    {% include "css.njk" %}
+  {% endblock %}
+  {% block favicon %}
+    <link rel="icon" href="{{ '/favicon.ico' | url }}">
+  {% endblock %}
+  <title>{{ title }} | {{ site.title }}</title>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  
+    <a class="navbar-brand" href="{{ '/' | url }}">{{ site.title }}</a>
+
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        {% for link in site.mainMenu %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ item.link | url }}">
+              {{ item.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </nav>
+
+  <div class="jumbotron">
+    <h1 class="display-2 text-center">
+      {{ title }}
+    </h1>
+  </div>
+
+  <div class="container">
+
+    <br />
+    {% block body %}
+      {{ content | safe }}
+    {% endblock %}
+  </div>
+
+  {% block js %}
+    <script src="{{ '/assets/js/jquery.min.js' | url }}"></script>
+    <script src="{{ '/assets/js/bootstrap.bundle.min.js' | url }}"></script>
+  {% endblock %}
+</body>

@@ -1,0 +1,23 @@
+{
+  "name": "predictions-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "data:build:serve": "node dump.js && npx @11ty/eleventy && http-server _site",
+    "build": "npx @11ty/eleventy",
+    "serve": "npx @11ty/eleventy && http-server _site",
+    "watch": "npx @11ty/eleventy --watch --serve"
+  },
+  "author": "Cobblestone Age Prude",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.0"
+  },
+  "dependencies": {
+    "fs-extra": "^9.0.1",
+    "mongoose": "^5.10.4",
+    "underscore": "^1.11.0"
+  }
+}

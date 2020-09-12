@@ -1,0 +1,31 @@
+---
+layout: base.njk
+title: Ongoing Predictions
+---
+
+{% for categorySlug, categoryName, description in categories %}
+
+  <h{{ categorySlug | dotdepth }} id="section={{ loop.index }}" class="display-{{ categorySlug | dotdepth }}">
+    {{ categoryName }}
+  </h{{ categorySlug | dotdepth }}>
+
+  <p><i>{{ description | safe }}</i></p>
+
+  {% for prediction in ongoing_predictions %}
+    {% if prediction.qualifiedCategory == categorySlug %}
+      <div class="card bg-light w-75 mx-auto mb-3">
+
+        <div class="card-body">
+          <h5 class="card-title">{{ prediction.name }}</h5>
+          <p class="card-text">
+            {{ prediction.summary }}
+          </p>
+        </div>
+
+        {% if prediction.imgUrl %}
+          <img class="card-img-bottom" src="{{ prediction.imgUrl }}">
+        {% endif %}
+      </div>
+    {% endif %}
+  {% endfor %}
+{% endfor %}
