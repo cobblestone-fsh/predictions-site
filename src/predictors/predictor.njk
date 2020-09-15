@@ -25,7 +25,7 @@ permalink: "predictors/{{ p._id }}/"
 
 <h3>Ongoing Predictions</h3>
 
-<div class="row">
+<div>
   {% for prediction in ongoing_predictions %}
     {% if prediction.predictor == p._id %}
       {% include "prediction_card.njk" %}

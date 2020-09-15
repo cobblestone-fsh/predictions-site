@@ -17,7 +17,7 @@ title: Ongoing Predictions
 
   <p><i>{{ description | safe }}</i></p>
 
-  <div class="row">
+  <div>
     {% for prediction in ongoing_predictions %}
       {% if prediction.qualifiedCategory == categorySlug %}
         {% include "prediction_card.njk" %}
